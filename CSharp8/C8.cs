@@ -9,6 +9,8 @@ namespace CSharp.CSharp8
     {
         public async Task Run()
         {
+            await new ReadonlyMembers().Run();
+            await new DefaultInterfaceImplementation().Run();
             await new UsingDeclaration().Run();
             await new StaticLocalFunctions().Run();
             await new AsynchronousStreams().Run();
