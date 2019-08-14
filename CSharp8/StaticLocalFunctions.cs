@@ -7,9 +7,11 @@ namespace CSharp.CSharp8
 {
     class StaticLocalFunctions : IRunner
     {
+        public string Name => "Static local functions";
+
         public async Task Run()
         {
-            Console.WriteLine("Static local functions");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             int y = 5;

@@ -5,14 +5,16 @@ using System.Threading.Tasks;
 
 namespace CSharp.CSharp8.Patterns
 {
-    class PatternsRunner : IRunner
+    class PatternsRunner : AbstractRunner
     {
-        public async Task Run()
-        {
-            await new SwitchExpressions().Run();
-            await new PropertyPattern().Run();
-            await new TuplePattern().Run();
-            await new PositionalPattern().Run();
-        }
+        public override string Name => "Patterns";
+
+        protected override IRunner[] Runners => new IRunner[]
+            {
+                new SwitchExpressions(),
+                new PropertyPattern(),
+                new TuplePattern(),
+                new PositionalPattern()
+            };
     }
 }

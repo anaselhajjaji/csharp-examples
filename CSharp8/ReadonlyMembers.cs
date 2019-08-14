@@ -7,9 +7,11 @@ namespace CSharp.CSharp8
 {
     class ReadonlyMembers : IRunner
     {
+        public string Name => "Readonly members";
+
         public async Task Run()
         {
-            Console.WriteLine("Readonly members");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             Console.WriteLine(new Point() { X = 0, Y = 1 }.ToString());

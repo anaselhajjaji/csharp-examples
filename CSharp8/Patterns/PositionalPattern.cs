@@ -7,9 +7,11 @@ namespace CSharp.CSharp8.Patterns
 {
     class PositionalPattern : IRunner
     {
+        public string Name => "Positional pattern";
+
         public async Task Run()
         {
-            Console.WriteLine("Positional pattern");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             Console.WriteLine($"{ GetQuadrant(new Point(0, 0)).ToString() }");

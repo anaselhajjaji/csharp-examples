@@ -7,9 +7,11 @@ namespace CSharp.CSharp8.Patterns
 {
     class PropertyPattern : IRunner
     {
+        public string Name => "Property pattern";
+
         public async Task Run()
         {
-            Console.WriteLine("Property pattern");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             Console.WriteLine($"Sale tax {ComputeSalesTax(new Address("WA"), 10)}");

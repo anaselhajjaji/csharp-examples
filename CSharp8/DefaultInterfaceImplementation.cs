@@ -7,13 +7,18 @@ namespace CSharp.CSharp8
 {
     class DefaultInterfaceImplementation : IRunner
     {
+        public string Name => "Default Interface Implementation";
+
         public async Task Run()
         {
-            Console.WriteLine("Default Interface Implementation");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             var interfaceImplementor = new InterfaceImplentor();
             interfaceImplementor.ImplementThis();
+            
+            InterfaceWithDefault interfaceWithDefault = interfaceImplementor;
+            interfaceWithDefault.DoDefault();
         }
 
         interface InterfaceWithDefault
@@ -24,6 +29,9 @@ namespace CSharp.CSharp8
 
         class InterfaceImplentor : InterfaceWithDefault
         {
+            // Can be extended
+            // public void DoDefault() => Console.WriteLine("Default extended and Called!");
+
             public void ImplementThis() => Console.WriteLine("Implemented method Called!");
         }
     }

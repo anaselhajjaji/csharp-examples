@@ -5,8 +5,17 @@ using System.Threading.Tasks;
 
 namespace CSharp
 {
-    public interface IRunner
+    interface IRunner
     {
+        public string Name { get;  }
+
+        public void WriteRunnerName()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(Name);
+            Console.ResetColor();
+        }
+
         public Task Run();
     }
 }

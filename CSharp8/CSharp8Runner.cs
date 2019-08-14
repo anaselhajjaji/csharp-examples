@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace CSharp.CSharp8
 {
-    public class CSharp8Runner : IRunner
+    class CSharp8Runner : AbstractRunner
     {
-        public async Task Run()
-        {
-            await new ReadonlyMembers().Run();
-            await new PatternsRunner().Run();
-            await new DefaultInterfaceImplementation().Run();
-            await new UsingDeclaration().Run();
-            await new StaticLocalFunctions().Run();
-            await new AsynchronousStreams().Run();
-        }
+        public override string Name => "C# 8 Features";
+
+        protected override IRunner[] Runners => new IRunner[]
+            {
+                new ReadonlyMembers(),
+                new PatternsRunner(),
+                new DefaultInterfaceImplementation(),
+                new UsingDeclaration(),
+                new StaticLocalFunctions(),
+                new NullableReferenceType(),
+                new AsynchronousStreams(),
+                new IndicesAndRanges()
+            };
     }
 }

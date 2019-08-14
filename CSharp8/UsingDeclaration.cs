@@ -7,9 +7,11 @@ namespace CSharp.CSharp8
 {
     class UsingDeclaration : IRunner
     {
+        public string Name => "Using Declaration";
+
         public async Task Run()
         {
-            Console.WriteLine("Using Declaration");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             using var disposeImplementer = new DisposeImplementer();

@@ -7,9 +7,11 @@ namespace CSharp.CSharp8.Patterns
 {
     class TuplePattern : IRunner
     {
+        public string Name => "Tuple pattern";
+
         public async Task Run()
         {
-            Console.WriteLine("Tuple pattern");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             Console.WriteLine($"{ RockPaperScissors("rock", "scissors") }");

@@ -7,9 +7,11 @@ namespace CSharp.CSharp8.Patterns
 {
     class SwitchExpressions : IRunner
     {
+        public string Name => "Switch expressions";
+
         public async Task Run()
         {
-            Console.WriteLine("Switch expressions");
+            (this as IRunner).WriteRunnerName();
             await Task.Delay(10); // just to delete the warning
 
             var color1 = FromRainbow(Rainbow.Red);
