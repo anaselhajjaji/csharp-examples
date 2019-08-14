@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CSharp.CSharp8
 {
-    public class AsynchronousStreams : IRunner
+    class AsynchronousStreams : IRunner
     {
         public static async IAsyncEnumerable<int> GenerateSequence()
         {

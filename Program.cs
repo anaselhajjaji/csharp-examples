@@ -8,7 +8,7 @@ namespace CSharp
     {
         async static Task Main(string[] args)
         {
-            await new C8().Run();
+            await new CSharp8Runner().Run();
         }
     }
 }

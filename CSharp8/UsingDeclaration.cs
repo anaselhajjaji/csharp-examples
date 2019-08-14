@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CSharp.CSharp8
 {
-    public class UsingDeclaration : IRunner
+    class UsingDeclaration : IRunner
     {
         public async Task Run()
         {

@@ -9,7 +9,7 @@ namespace CSharp.CSharp8
     {
         public async Task Run()
         {
-            Console.WriteLine("Readonly members");
+            Console.WriteLine("Default Interface Implementation");
             await Task.Delay(10); // just to delete the warning
 
             var interfaceImplementor = new InterfaceImplentor();
@@ -19,8 +19,6 @@ namespace CSharp.CSharp8
         interface InterfaceWithDefault
         {
             public void DoDefault() => Console.WriteLine("Default Impl Called!");
-            
-
             public void ImplementThis();
         }
 
